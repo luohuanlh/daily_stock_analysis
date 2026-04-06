@@ -1,0 +1,800 @@
+# Instincts generated from https://github.com/luohuanlh/daily_stock_analysis
+# Generated: 2026-04-02T12:33:08.535Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: daily_stock_analysis-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, feat, docs, chore, [feat]
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix: resolve MiniMax-M2.7 connection test failures (#975), docs: prepare changelog for v3.12.0
+
+---
+id: daily_stock_analysis-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Commit Length
+
+## Action
+
+Write moderate-length commit messages (~55 characters)
+
+## Evidence
+
+- Average commit message length: 55 chars
+- Based on 200 commits
+
+---
+id: daily_stock_analysis-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: daily_stock_analysis-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: daily_stock_analysis-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: daily_stock_analysis-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: agent, core, data, notification_sender, repositories
+
+---
+id: daily_stock_analysis-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: daily_stock_analysis-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.tsx
+
+---
+id: daily_stock_analysis-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.tsx
+
+## Evidence
+
+- File pattern: *.test.tsx
+- Consistent across test files
+
+---
+id: daily_stock_analysis-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Test Mocking
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: vi.mock
+- Consistent across test files
+
+---
+id: daily_stock_analysis-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Test Types
+
+## Action
+
+Write unit, integration, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration, e2e
+- Coverage config: no
+
+---
+id: daily_stock_analysis-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~14x per month
+- Files: apps/dsa-web/e2e/*, apps/dsa-web/src/components/report/*, apps/dsa-web/src/components/report/__tests__/*
+
+---
+id: daily_stock_analysis-workflow-test-driven-development
+trigger: "when adding new functionality"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Test Driven Development
+
+## Action
+
+Follow the test-driven-development workflow:
+1. Write failing test
+2. Implement code to pass test
+3. Refactor if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: **/*.test.*, **/*.spec.*, src/**/*
+
+---
+id: daily_stock_analysis-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/**/*
+
+---
+id: daily_stock_analysis-workflow-feature-development-api-frontend-backend-test-doc
+trigger: "when doing feature development api frontend backend test doc"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Feature Development Api Frontend Backend Test Doc
+
+## Action
+
+Follow the feature-development-api-frontend-backend-test-doc workflow:
+1. Add or update API endpoint (api/v1/endpoints/*.py, api/v1/schemas/*.py)
+2. Implement or update backend service logic (src/services/*.py, src/repositories/*.py)
+3. Update or create frontend API client/types (apps/dsa-web/src/api/*.ts, apps/dsa-web/src/types/*.ts)
+4. Update or create frontend UI components/pages (apps/dsa-web/src/pages/*.tsx, apps/dsa-web/src/components/**/*.tsx)
+5. Write or update tests for backend (tests/test_*.py) and frontend (apps/dsa-web/src/pages/__tests__/*.test.tsx, apps/dsa-web/src/components/**/__tests__/*.test.tsx)
+6. Update documentation and changelog (docs/CHANGELOG.md, README.md, docs/README_EN.md, docs/full-guide.md, etc.)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: api/v1/endpoints/*.py, api/v1/schemas/*.py, src/services/*.py
+
+---
+id: daily_stock_analysis-workflow-bugfix-backend-service-test-changelog
+trigger: "when doing bugfix backend service test changelog"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Bugfix Backend Service Test Changelog
+
+## Action
+
+Follow the bugfix-backend-service-test-changelog workflow:
+1. Fix or update backend code (src/**/*.py, data_provider/**/*.py, main.py, etc.)
+2. Update or add relevant tests (tests/test_*.py)
+3. Update documentation and changelog (docs/CHANGELOG.md, docs/README_*.md, etc.)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/**/*.py, data_provider/**/*.py, main.py
+
+---
+id: daily_stock_analysis-workflow-frontend-ui-refactor-or-polish-with-tests
+trigger: "when doing frontend ui refactor or polish with tests"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Frontend Ui Refactor Or Polish With Tests
+
+## Action
+
+Follow the frontend-ui-refactor-or-polish-with-tests workflow:
+1. Refactor or update frontend components/pages (apps/dsa-web/src/components/**/*.tsx, apps/dsa-web/src/pages/*.tsx)
+2. Update or add frontend tests (apps/dsa-web/src/components/**/__tests__/*.test.tsx, apps/dsa-web/src/pages/__tests__/*.test.tsx)
+3. Update global styles or shared utilities if needed (apps/dsa-web/src/index.css, apps/dsa-web/src/utils/*.ts)
+4. Update documentation and changelog (docs/CHANGELOG.md)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: apps/dsa-web/src/components/**/*.tsx, apps/dsa-web/src/pages/*.tsx, apps/dsa-web/src/components/**/__tests__/*.test.tsx
+
+---
+id: daily_stock_analysis-workflow-add-or-update-configuration-or-env-support
+trigger: "when doing add or update configuration or env support"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Add Or Update Configuration Or Env Support
+
+## Action
+
+Follow the add-or-update-configuration-or-env-support workflow:
+1. Update configuration files (.env.example, src/config.py, src/core/config_registry.py, etc.)
+2. Update or add related backend logic (src/services/system_config_service.py, etc.)
+3. Update or add tests for configuration (tests/test_config_*.py, tests/test_system_config_*.py)
+4. Update documentation and changelog (docs/CHANGELOG.md, docs/README_*.md, docs/full-guide*.md)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: .env.example, src/config.py, src/core/config_registry.py
+
+---
+id: daily_stock_analysis-workflow-add-or-update-tests-for-existing-feature
+trigger: "when doing add or update tests for existing feature"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Add Or Update Tests For Existing Feature
+
+## Action
+
+Follow the add-or-update-tests-for-existing-feature workflow:
+1. Add or update backend tests (tests/test_*.py)
+2. Add or update frontend tests (apps/dsa-web/src/pages/__tests__/*.test.tsx, apps/dsa-web/src/components/**/__tests__/*.test.tsx)
+3. Update documentation and changelog if needed (docs/CHANGELOG.md)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: tests/test_*.py, apps/dsa-web/src/pages/__tests__/*.test.tsx, apps/dsa-web/src/components/**/__tests__/*.test.tsx
+
+---
+id: daily_stock_analysis-workflow-changelog-or-docs-release-preparation
+trigger: "when doing changelog or docs release preparation"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Workflow Changelog Or Docs Release Preparation
+
+## Action
+
+Follow the changelog-or-docs-release-preparation workflow:
+1. Update docs/CHANGELOG.md (add, reorganize, or clean up entries)
+2. Update other documentation files as needed (README.md, docs/README_*.md, docs/full-guide*.md, etc.)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: docs/CHANGELOG.md, README.md, docs/README_*.md
+
+---
+id: daily_stock_analysis-instinct-naming-files
+trigger: "When creating or renaming a file in the Python codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Naming Files
+
+## Action
+
+Use snake_case for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent file naming in src/ and core/
+
+---
+id: daily_stock_analysis-instinct-naming-functions
+trigger: "When defining a function in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Naming Functions
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: daily_stock_analysis-instinct-naming-classes
+trigger: "When defining a class in Python"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Naming Classes
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: daily_stock_analysis-instinct-naming-constants
+trigger: "When defining a constant in Python"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Naming Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: daily_stock_analysis-instinct-import-style
+trigger: "When importing modules within the codebase"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: daily_stock_analysis-instinct-export-style
+trigger: "When exporting from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: daily_stock_analysis-instinct-test-file-pattern
+trigger: "When adding a test file for frontend code"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Test File Pattern
+
+## Action
+
+Name test files with the pattern *.test.tsx
+
+## Evidence
+
+- Pattern in testing.filePattern
+- Examples in apps/dsa-web/src/components/**/__tests__/*.test.tsx
+
+---
+id: daily_stock_analysis-instinct-test-framework
+trigger: "When writing frontend tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Test Framework
+
+## Action
+
+Use vitest as the testing framework
+
+## Evidence
+
+- Pattern in testing.framework
+- Presence of vitest.config.ts
+
+---
+id: daily_stock_analysis-instinct-test-mocking
+trigger: "When mocking modules in frontend tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Test Mocking
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Pattern in testing.mockingStyle
+
+---
+id: daily_stock_analysis-instinct-test-types
+trigger: "When planning tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Test Types
+
+## Action
+
+Include unit, integration, and e2e tests as appropriate
+
+## Evidence
+
+- Pattern in testing.testTypes
+- Examples in apps/dsa-web/e2e/*
+
+---
+id: daily_stock_analysis-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Git Commit Format
+
+## Action
+
+Use a conventional commit prefix (fix, feat, docs, chore, release, [feat]) followed by a concise description
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples like 'fix: resolve MiniMax-M2.7 connection test failures (#975)'
+
+---
+id: daily_stock_analysis-instinct-git-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Git Commit Length
+
+## Action
+
+Keep the commit message around 55 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: daily_stock_analysis-instinct-workflow-feature-dev
+trigger: "When adding a new user-facing feature requiring backend, API, frontend, and documentation updates"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Workflow Feature Dev
+
+## Action
+
+Follow the feature-development-api-frontend-backend-test-doc workflow: update API, backend, frontend, tests, and docs
+
+## Evidence
+
+- Workflow feature-development-api-frontend-backend-test-doc
+- Examples in workflow and commits
+
+---
+id: daily_stock_analysis-instinct-workflow-bugfix-backend
+trigger: "When fixing a bug in backend services or core logic"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Workflow Bugfix Backend
+
+## Action
+
+Follow the bugfix-backend-service-test-changelog workflow: fix backend code, update/add tests, update changelog/docs
+
+## Evidence
+
+- Workflow bugfix-backend-service-test-changelog
+- Examples in workflow and commits
+
+---
+id: daily_stock_analysis-instinct-workflow-frontend-refactor
+trigger: "When refactoring or polishing frontend UI components/pages"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Workflow Frontend Refactor
+
+## Action
+
+Follow the frontend-ui-refactor-or-polish-with-tests workflow: refactor components, update/add tests, update styles/utils/docs
+
+## Evidence
+
+- Workflow frontend-ui-refactor-or-polish-with-tests
+- Examples in workflow and commits
+
+---
+id: daily_stock_analysis-instinct-workflow-config-update
+trigger: "When introducing or modifying configuration/environment variables or system settings"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Workflow Config Update
+
+## Action
+
+Follow the add-or-update-configuration-or-env-support workflow: update config files, backend logic, tests, and docs
+
+## Evidence
+
+- Workflow add-or-update-configuration-or-env-support
+- Examples in workflow and commits
+
+---
+id: daily_stock_analysis-instinct-workflow-add-tests
+trigger: "When improving test coverage or updating tests after code changes"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Workflow Add Tests
+
+## Action
+
+Follow the add-or-update-tests-for-existing-feature workflow: add/update backend and frontend tests, update changelog if needed
+
+## Evidence
+
+- Workflow add-or-update-tests-for-existing-feature
+- Examples in workflow and commits
+
+---
+id: daily_stock_analysis-instinct-workflow-release-docs
+trigger: "When preparing for a release or reorganizing documentation/changelog after many changes"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: luohuanlh/daily_stock_analysis
+---
+
+# Daily_stock_analysis Instinct Workflow Release Docs
+
+## Action
+
+Follow the changelog-or-docs-release-preparation workflow: update docs/CHANGELOG.md and other documentation files
+
+## Evidence
+
+- Workflow changelog-or-docs-release-preparation
+- Examples in workflow and commits
+
